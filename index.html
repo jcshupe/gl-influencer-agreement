@@ -2,16 +2,24 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Acuerdo de Colaboración – JC Green Life NYC</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JC Green Life NYC – Influencer Agreement</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Tipografía -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
   <style>
     :root {
       --gl-green: #27F535;
-      --bg-dark: #050505;
-      --card-bg: #111111;
-      --card-border: #222222;
-      --text-main: #f5f5f5;
-      --text-muted: #bbbbbb;
+      --gl-green-soft: #1e8f3a;
+      --gl-bg: #050606;
+      --gl-card: #101214;
+      --gl-card-soft: #15181b;
+      --gl-border: #2a2f36;
+      --gl-text-main: #f5f7fa;
+      --gl-text-soft: #c1c7d0;
+      --gl-pill-bg: #0f1511;
+      --gl-error: #ff5252;
     }
 
     * {
@@ -21,9 +29,9 @@
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #101010, #000000 60%);
-      color: var(--text-main);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #161b1b 0, #020304 55%);
+      color: var(--gl-text-main);
       min-height: 100vh;
       display: flex;
       justify-content: center;
@@ -31,606 +39,735 @@
       padding: 32px 12px;
     }
 
-    .page {
-      max-width: 1180px;
+    .page-wrapper {
       width: 100%;
-      background: radial-gradient(circle at top left, #181818, #050505 55%);
-      border-radius: 22px;
-      border: 1px solid #202020;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.85);
-      padding: 28px 28px 32px;
+      max-width: 1180px;
+      background: linear-gradient(145deg, #050607, #090b0c);
+      border-radius: 26px;
+      box-shadow: 0 26px 80px rgba(0, 0, 0, 0.85);
+      padding: 26px 26px 30px;
+      border: 1px solid #181c22;
     }
 
+    /* Header */
     .header {
       text-align: center;
       margin-bottom: 22px;
     }
 
     .logo-circle {
-      width: 80px;
-      height: 80px;
+      width: 110px;
+      height: 110px;
       border-radius: 50%;
-      background: radial-gradient(circle at 30% 20%, #333, #050505);
       margin: 0 auto 10px;
+      background: radial-gradient(circle at 30% 30%, #1a1f24 0, #050607 55%);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 0 0 1px #222, 0 18px 40px rgba(0, 0, 0, 0.9);
+      box-shadow: 0 0 0 1px #1e252c, 0 18px 38px rgba(0, 0, 0, 0.9);
     }
 
     .logo-circle img {
-      width: 62px;
-      height: auto;
+      width: 78px;
+      height: 78px;
+      object-fit: contain;
+      image-rendering: auto;
       display: block;
     }
 
-    .header-title {
-      font-size: 22px;
-      letter-spacing: 0.18em;
+    .title {
+      font-size: 20px;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--gl-green);
+      font-weight: 600;
+      color: var(--gl-text-main);
       margin-bottom: 4px;
     }
 
-    .header-sub {
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
-    .badge-row {
-      margin-top: 12px;
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .badge {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(39, 245, 53, 0.2);
-      color: var(--gl-green);
-      background: linear-gradient(90deg, rgba(39, 245, 53, 0.12), transparent);
-    }
-
     .subtitle {
-      margin-top: 12px;
-      font-size: 14px;
-      color: var(--text-main);
+      font-size: 13px;
+      color: var(--gl-text-soft);
+      opacity: 0.88;
     }
 
     .subtitle span {
       color: var(--gl-green);
-      font-weight: 600;
+      font-weight: 500;
     }
 
-    .layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
-      gap: 22px;
-      margin-top: 20px;
-    }
-
-    @media (max-width: 880px) {
-      .page {
-        padding: 20px 16px 22px;
-      }
-      .layout {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .card {
-      background: linear-gradient(145deg, #121212, #080808);
-      border-radius: 18px;
-      border: 1px solid var(--card-border);
-      padding: 16px 16px 18px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      border-radius: inherit;
-      background: radial-gradient(circle at top left, rgba(39, 245, 53, 0.12), transparent 55%);
-      opacity: 0.9;
-      mix-blend-mode: screen;
-    }
-
-    .card-inner {
-      position: relative;
-      z-index: 1;
-    }
-
-    .card-header {
+    /* Pills */
+    .pill-row {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 10px;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 12px;
+      flex-wrap: wrap;
     }
 
     .pill {
-      font-size: 11px;
-      padding: 2px 9px;
       border-radius: 999px;
-      border: 1px solid rgba(39, 245, 53, 0.45);
-      color: var(--gl-green);
+      border: 1px solid #1f2621;
+      background: var(--gl-pill-bg);
+      color: var(--gl-text-soft);
+      font-size: 11px;
+      padding: 4px 12px;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.18em;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
 
-    .pill-secondary {
-      border-color: rgba(255, 255, 255, 0.2);
-      color: var(--text-muted);
-    }
-
-    .card-title {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text-main);
-    }
-
-    .terms-scroll {
-      max-height: 430px;
-      overflow-y: auto;
-      padding-right: 6px;
-      scrollbar-width: thin;
-      scrollbar-color: var(--gl-green) #111;
-      margin-top: 6px;
-    }
-
-    .terms-scroll::-webkit-scrollbar {
-      width: 6px;
-    }
-    .terms-scroll::-webkit-scrollbar-track {
-      background: #050505;
-      border-radius: 999px;
-    }
-    .terms-scroll::-webkit-scrollbar-thumb {
-      background: var(--gl-green);
-      border-radius: 999px;
-    }
-
-    .section-title {
-      font-size: 12px;
-      font-weight: 700;
-      margin-top: 8px;
-      margin-bottom: 4px;
+    .pill span {
       color: var(--gl-green);
+      font-weight: 600;
     }
 
-    .terms-list {
-      font-size: 12px;
-      color: var(--text-main);
-      margin-left: 16px;
+    /* Layout principal */
+    .content-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 16px;
+      margin-top: 16px;
     }
 
-    .terms-list li {
-      margin-bottom: 3px;
+    @media (max-width: 960px) {
+      .page-wrapper {
+        padding: 20px 16px 24px;
+      }
+      .content-row {
+        grid-template-columns: minmax(0, 1fr);
+      }
     }
 
-    .terms-muted {
-      font-size: 11px;
-      color: var(--text-muted);
-      margin-top: 6px;
+    /* Tarjeta base */
+    .card {
+      background: var(--gl-card);
+      border-radius: 20px;
+      border: 1px solid var(--gl-border);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.7);
     }
 
-    form {
+    /* Columna izquierda – Términos */
+    .terms-card {
+      padding: 18px 18px 18px;
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
 
-    label {
-      font-size: 12px;
-      color: var(--text-main);
-      margin-bottom: 2px;
-      display: block;
-    }
-
-    label span.req {
-      color: var(--gl-green);
-      margin-left: 3px;
-    }
-
-    input,
-    textarea {
-      width: 100%;
-      background: #050505;
-      border-radius: 10px;
-      border: 1px solid #262626;
-      padding: 8px 10px;
-      font-size: 12px;
-      color: var(--text-main);
-      outline: none;
-      transition: border-color 0.18s, box-shadow 0.18s;
-    }
-
-    input:focus,
-    textarea:focus {
-      border-color: var(--gl-green);
-      box-shadow: 0 0 0 1px rgba(39, 245, 53, 0.25);
-    }
-
-    textarea {
-      min-height: 80px;
-      resize: vertical;
-    }
-
-    .helper {
-      font-size: 10px;
-      color: var(--text-muted);
-      margin-top: 2px;
-    }
-
-    .checkbox-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      margin-top: 4px;
-    }
-
-    .checkbox-row input[type="checkbox"] {
-      width: 15px;
-      height: 15px;
-      margin-top: 2px;
-      cursor: pointer;
-    }
-
-    .checkbox-row label {
+    .section-label {
+      display: inline-flex;
+      gap: 6px;
+      align-items: center;
       font-size: 11px;
-      color: var(--text-muted);
+      text-transform: uppercase;
+      color: var(--gl-text-soft);
+      letter-spacing: 0.18em;
+    }
+
+    .section-label span {
+      color: var(--gl-green);
+      font-weight: 500;
+    }
+
+    .lang-tabs {
+      margin-top: 8px;
+      display: inline-flex;
+      background: #0b0d10;
+      border-radius: 999px;
+      border: 1px solid #1f262f;
+      padding: 2px;
+    }
+
+    .lang-tab {
+      border: none;
+      outline: none;
+      background: transparent;
+      color: var(--gl-text-soft);
+      font-size: 11px;
+      padding: 4px 12px;
+      border-radius: 999px;
       cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .lang-tab.active {
+      background: #18231b;
+      color: var(--gl-green);
+      font-weight: 600;
+    }
+
+    .terms-title {
+      margin-top: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--gl-text-main);
+    }
+
+    .terms-content {
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--gl-text-soft);
+      line-height: 1.58;
+      background: var(--gl-card-soft);
+      border-radius: 16px;
+      padding: 14px 14px 14px;
+      border: 1px solid #22272f;
+      max-height: 380px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: #26332a transparent;
+    }
+
+    .terms-content::-webkit-scrollbar {
+      width: 6px;
+    }
+    .terms-content::-webkit-scrollbar-thumb {
+      background: #253027;
+      border-radius: 999px;
+    }
+
+    .terms-content h4 {
+      font-size: 13px;
+      color: var(--gl-green);
+      margin-bottom: 4px;
+    }
+
+    .terms-content ul {
+      margin-left: 18px;
+      margin-bottom: 12px;
+    }
+
+    .terms-content li {
+      margin-bottom: 4px;
+    }
+
+    .small-note {
+      font-size: 11px;
+      margin-top: 4px;
+      color: #9ca5b3;
+    }
+
+    /* Columna derecha – Formulario */
+    .form-card {
+      padding: 18px 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .form-heading {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .form-subheading {
+      font-size: 11px;
+      color: var(--gl-text-soft);
+      line-height: 1.5;
+    }
+
+    .form-subheading span {
+      color: var(--gl-green);
+      font-weight: 500;
+    }
+
+    .form-grid {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      font-size: 12px;
+    }
+
+    .field label {
+      color: var(--gl-text-soft);
+      font-weight: 500;
+    }
+
+    .field label span.req {
+      color: var(--gl-green);
+      margin-left: 2px;
+    }
+
+    .field small {
+      font-size: 11px;
+      color: #7d8696;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+      background: #090b0f;
+      border-radius: 999px;
+      border: 1px solid #272d35;
+      padding: 7px 12px;
+      color: var(--gl-text-main);
+      font-size: 13px;
+      outline: none;
+      transition: border 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus {
+      border-color: var(--gl-green);
+      box-shadow: 0 0 0 1px rgba(39, 245, 53, 0.4);
+      background: #050608;
     }
 
     .summary-box {
-      margin-top: 8px;
-      padding: 8px 9px;
-      border-radius: 10px;
-      background: #050505;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      font-size: 11px;
-      color: var(--text-muted);
+      margin-top: 4px;
+      background: radial-gradient(circle at top left, #182619 0, #0a0d0b 55%);
+      border-radius: 16px;
+      border: 1px solid #26452a;
+      padding: 10px 12px;
+      font-size: 12px;
+      color: #d7f7df;
     }
 
-    .summary-box b {
+    .summary-box h4 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 6px;
+      color: #b7f9c9;
+    }
+
+    .summary-box ul {
+      margin-left: 18px;
+    }
+
+    .summary-box li {
+      margin-bottom: 2px;
+    }
+
+    /* Checkbox + botón */
+    .accept-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 11.5px;
+      color: var(--gl-text-soft);
+      margin-top: 8px;
+    }
+
+    .accept-row input[type="checkbox"] {
+      margin-top: 3px;
+      accent-color: var(--gl-green);
+      width: 15px;
+      height: 15px;
+    }
+
+    .accept-row b {
       color: var(--gl-green);
     }
 
-    .submit-row {
-      margin-top: 10px;
-      text-align: center;
+    .btn-row {
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
     }
 
     button[type="submit"] {
-      width: 100%;
       border-radius: 999px;
-      padding: 10px 16px;
       border: none;
+      padding: 9px 16px;
       font-size: 13px;
       font-weight: 600;
-      letter-spacing: 0.09em;
       text-transform: uppercase;
+      letter-spacing: 0.18em;
+      background: linear-gradient(90deg, #1fea40, #27f535);
+      color: #020302;
       cursor: pointer;
-      background: linear-gradient(135deg, var(--gl-green), #1bb92f);
-      color: #020202;
-      box-shadow: 0 12px 30px rgba(39, 245, 53, 0.4);
-      transition: transform 0.15s, box-shadow 0.15s, filter 0.15s;
+      box-shadow: 0 16px 36px rgba(8, 245, 46, 0.45);
+      transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
     }
 
     button[type="submit"]:hover {
       transform: translateY(-1px);
-      filter: brightness(1.05);
-      box-shadow: 0 16px 38px rgba(39, 245, 53, 0.5);
+      filter: brightness(1.03);
+      box-shadow: 0 22px 46px rgba(8, 245, 46, 0.65);
     }
 
-    button[type="submit"]:active {
-      transform: translateY(0);
-      box-shadow: 0 8px 20px rgba(39, 245, 53, 0.35);
-    }
-
-    .footer-note {
-      margin-top: 14px;
-      font-size: 10px;
-      color: var(--text-muted);
+    .helper-note {
+      font-size: 10.5px;
       text-align: center;
-      line-height: 1.4;
+      color: #939dac;
     }
 
-    .footer-note span {
+    /* Footer legal */
+    .footer-note {
+      margin-top: 10px;
+      font-size: 10.5px;
+      text-align: center;
+      color: #808a98;
+    }
+
+    .footer-note a {
       color: var(--gl-green);
+      text-decoration: none;
+    }
+
+    /* Mensajes */
+    .error-text {
+      margin-top: 4px;
+      font-size: 11px;
+      color: var(--gl-error);
+    }
+
+    .hidden {
+      display: none !important;
     }
   </style>
 </head>
 <body>
-  <div class="page">
+  <div class="page-wrapper" id="agreement-root">
+    <!-- HEADER -->
     <header class="header">
       <div class="logo-circle">
-        <!-- tu logo dentro del círculo -->
+        <!-- Asegúrate de tener este archivo en el repo -->
         <img src="logo-jcgreenlife.png" alt="JC Green Life NYC Logo" />
       </div>
-      <div class="header-title">JC GREEN LIFE NYC</div>
-      <div class="header-sub">
-        Acuerdo de Colaboración de Influencers · Influencer Collaboration Agreement
+      <div class="title">JC GREEN LIFE NYC</div>
+      <div class="subtitle">
+        <span>Acuerdo de Colaboración de Influencers</span> · Influencer Collaboration Agreement
       </div>
-      <div class="badge-row">
-        <div class="badge">Intercambio · Collaboration</div>
-        <div class="badge">Sin pago en efectivo · No cash payment</div>
+
+      <div class="pill-row">
+        <div class="pill">
+          INTERCAMBIO · <span>COLLABORATION</span>
+        </div>
+        <div class="pill">
+          SIN PAGO EN EFECTIVO · <span>NO CASH PAYMENT</span>
+        </div>
+        <div class="pill">
+          PRODUCTOS / SERVICIOS · <span>MEALS / SERVICE</span>
+        </div>
       </div>
-      <p class="subtitle">
-        Al completar este formulario confirmas que aceptas colaborar bajo un esquema de
-        <span>intercambio de comida/servicio por contenido</span>, sin pago económico.
-      </p>
     </header>
 
-    <div class="layout">
-      <!-- COLUMNA IZQUIERDA – TÉRMINOS EN ESPAÑOL -->
-      <section class="card">
-        <div class="card-inner">
-          <div class="card-header">
-            <div class="pill">ESPAÑOL</div>
-            <div class="card-title">Términos del intercambio</div>
-          </div>
-          <div class="terms-scroll">
-            <div class="section-title">1. Naturaleza del intercambio</div>
-            <ul class="terms-list">
-              <li>
-                Esta aceptación digital confirma que el intercambio consiste en
-                <b> comidas / servicio a cambio de contenido</b> en redes sociales,
-                <b> sin pago económico</b>.
-              </li>
-            </ul>
-
-            <div class="section-title">2. Compromisos del influencer</div>
-            <ul class="terms-list">
-              <li>Publicar de <b>3 a 4 stories a la semana</b> en su cuenta.</li>
-              <li>
-                De esos stories, al menos <b>1 (uno)</b> debe ser hablado, mencionando a JC
-                Green Life NYC y el servicio o comida.
-              </li>
-              <li>
-                Mostrar el producto de forma clara y respetuosa con la marca.
-              </li>
-              <li>
-                No eliminar los contenidos antes de <b>90 días</b>, salvo acuerdo por escrito.
-              </li>
-            </ul>
-
-            <div class="section-title">3. Compromisos de JC Green Life NYC</div>
-            <ul class="terms-list">
-              <li>
-                Entregar las comidas/servicios acordados según el plan establecido.
-              </li>
-              <li>
-                Cumplir con la calidad habitual de JC Green Life NYC.
-              </li>
-              <li>
-                Coordinar entregas y dudas por los canales habituales de contacto.
-              </li>
-            </ul>
-
-            <div class="section-title">4. Uso de imagen y contenido</div>
-            <ul class="terms-list">
-              <li>
-                El influencer autoriza el uso de su
-                <b> imagen, nombre de usuario y contenido generado</b>
-                en redes y medios de JC Green Life NYC.
-              </li>
-              <li>
-                El uso será <b>exclusivamente en el marco de esta colaboración</b> y para
-                promoción de la marca.
-              </li>
-            </ul>
-
-            <p class="terms-muted">
-              Al enviar el formulario, el influencer acepta que este acuerdo tiene una
-              <b> vigencia inicial de 90 días</b>, pudiendo renovarse o finalizarse por
-              cualquiera de las partes si no se cumplen los compromisos.
-            </p>
-          </div>
+    <!-- CUERPO PRINCIPAL -->
+    <div class="content-row">
+      <!-- TÉRMINOS -->
+      <section class="card terms-card">
+        <div class="section-label">
+          Términos del intercambio
+          <span> / Agreement Terms</span>
         </div>
-      </section>
 
-      <!-- COLUMNA DERECHA – FORMULARIO -->
-      <section class="card">
-        <div class="card-inner">
-          <div class="card-header">
-            <div class="pill pill-secondary">Formulario de aceptación</div>
-          </div>
+        <div class="lang-tabs">
+          <button class="lang-tab active" data-lang="es">ESPAÑOL</button>
+          <button class="lang-tab" data-lang="en">ENGLISH</button>
+        </div>
 
-          <form id="agreement-form">
-            <div>
-              <label for="fullname">Nombre completo <span class="req">*</span></label>
-              <input
-                id="fullname"
-                name="fullname"
-                type="text"
-                required
-                autocomplete="name"
-                placeholder="Ej. Ana Pérez"
-              />
-            </div>
+        <!-- ESPAÑOL -->
+        <div class="terms-content lang-block lang-es">
+          <h4>1. Naturaleza del intercambio</h4>
+          <ul>
+            <li>Esta aceptación digital confirma que el intercambio consiste en <b>comidas / servicio a cambio de contenido en redes sociales</b>, sin pago económico.</li>
+          </ul>
 
-            <div>
-              <label for="instagram">Usuario de Instagram (@) <span class="req">*</span></label>
-              <input
-                id="instagram"
-                name="instagram"
-                type="text"
-                required
-                placeholder="Ej. @tucuenta"
-              />
-            </div>
+          <h4>2. Compromisos del influencer</h4>
+          <ul>
+            <li>Publicar de <b>3 a 4 stories a la semana</b> en su cuenta.</li>
+            <li>De esos stories, al menos <b>1 (uno)</b> debe ser hablado, mencionando a JC Green Life NYC y el servicio o comida.</li>
+            <li>Mostrar el producto de forma clara y respetuosa con la marca.</li>
+            <li>No eliminar los contenidos antes de <b>90 días</b>, salvo acuerdo previo por escrito.</li>
+          </ul>
 
-            <div>
-              <label for="email">Correo electrónico <span class="req">*</span></label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                required
-                autocomplete="email"
-                placeholder="Ej. correo@ejemplo.com"
-              />
-            </div>
+          <h4>3. Compromisos de JC Green Life NYC</h4>
+          <ul>
+            <li>Entregar las comidas/servicios acordados según el plan establecido.</li>
+            <li>Cumplir con la calidad habitual de JC Green Life NYC.</li>
+            <li>Coordinar entregas y dudas por los canales habituales de contacto.</li>
+          </ul>
 
-            <div>
-              <label for="internalRef">ID opcional / referencia interna (si aplica)</label>
-              <input
-                id="internalRef"
-                name="internalRef"
-                type="text"
-                placeholder="Ej. Código interno o nota (opcional)"
-              />
-              <p class="helper">
-                Este campo lo usa JC Green Life NYC solo para referencia interna si es necesario.
-              </p>
-            </div>
+          <h4>4. Uso de imagen y contenido</h4>
+          <ul>
+            <li>El influencer autoriza el uso de su <b>imagen, nombre de usuario y contenido generado</b> en redes y medios de JC Green Life NYC.</li>
+            <li>El uso será <b>exclusivamente en el marco de esta colaboración</b> y para promoción de la marca.</li>
+          </ul>
 
-            <div class="summary-box">
-              <b>Resumen rápido de los compromisos (ES / EN):</b><br />
-              • Intercambio de comidas/servicio por contenido en redes, sin pago económico.<br />
-              • 3–4 stories por semana, al menos 1 hablado, etiquetando a JC Green Life NYC.<br />
-              • Uso de imagen, usuario y contenido generado solo dentro de esta colaboración.<br />
-              • No se crea relación laboral ni se garantiza pago en efectivo.<br />
-              • Duración inicial de 90 días, renovable o cancelable por cualquiera de las partes.
-            </div>
+          <p class="small-note">
+            Al enviar el formulario, el influencer acepta que este acuerdo tiene una <b>vigencia inicial de 90 días</b>, pudiendo renovarse o finalizarse por cualquiera de las partes si no se cumplen los compromisos.
+          </p>
+        </div>
 
-            <div class="checkbox-row">
-              <input
-                type="checkbox"
-                id="accept-terms"
-                name="accept-terms"
-                required
-              />
-              <label for="accept-terms">
-                Declaro que he leído y acepto todos los términos de colaboración descritos en este
-                acuerdo entre JC Green Life NYC e influencer.
-              </label>
-            </div>
+        <!-- ENGLISH -->
+        <div class="terms-content lang-block lang-en hidden">
+          <h4>1. Nature of the exchange</h4>
+          <ul>
+            <li>This digital acceptance confirms that the exchange consists of <b>meals / service in exchange for social media content</b>, with no monetary payment.</li>
+          </ul>
 
-            <div class="submit-row">
-              <button type="submit">Enviar aceptación</button>
-            </div>
-          </form>
+          <h4>2. Influencer commitments</h4>
+          <ul>
+            <li>Post <b>3 to 4 stories per week</b> on their account.</li>
+            <li>Of these stories, at least <b>1 (one)</b> must be spoken, mentioning JC Green Life NYC and the product or service received.</li>
+            <li>Show the product clearly and respectfully with the brand.</li>
+            <li>Not delete the content before <b>90 days</b>, unless otherwise agreed in writing.</li>
+          </ul>
 
-          <p class="footer-note">
-            Al enviar este formulario autorizas a <span>JC Green Life NYC</span> a registrar tu
-            aceptación de manera digital y generar un PDF interno como respaldo del acuerdo. Esto no
-            sustituye asesoría legal independiente.
+          <h4>3. JC Green Life NYC commitments</h4>
+          <ul>
+            <li>Provide the meals/services agreed according to the selected plan.</li>
+            <li>Maintain the standard quality of JC Green Life NYC.</li>
+            <li>Coordinate deliveries and communication through the usual contact channels.</li>
+          </ul>
+
+          <h4>4. Use of image and content</h4>
+          <ul>
+            <li>The influencer authorizes the use of their <b>image, username and generated content</b> on JC Green Life NYC social media and platforms.</li>
+            <li>The use of these materials will be <b>exclusively within the framework of this collaboration</b> and for brand promotion.</li>
+          </ul>
+
+          <p class="small-note">
+            By submitting the form, the influencer accepts that this agreement has an <b>initial term of 90 days</b>, and may be renewed or terminated by either party if commitments are not met.
           </p>
         </div>
       </section>
+
+      <!-- FORMULARIO -->
+      <section class="card form-card">
+        <div>
+          <div class="form-heading">
+            Intercambio JC Green Life NYC – Influencer
+          </div>
+          <p class="form-subheading">
+            Al completar este formulario confirmas que aceptas colaborar bajo un esquema de
+            <span> intercambio de comida/servicio por contenido</span>, sin pago económico.
+            Al enviarlo confirmas que este es un
+            <span> acuerdo de productos/servicios solamente</span>.
+          </p>
+        </div>
+
+        <form id="agreement-form" class="form-grid">
+          <div class="field">
+            <label for="full_name">Nombre completo<span class="req">*</span></label>
+            <input id="full_name" name="full_name" type="text" placeholder="Ej. Ana Pérez" required />
+          </div>
+
+          <div class="field">
+            <label for="instagram_handle">Usuario de Instagram (@)<span class="req">*</span></label>
+            <input id="instagram_handle" name="instagram_handle" type="text" placeholder="Ej. @tucuenta" required />
+          </div>
+
+          <div class="field">
+            <label for="email">Correo electrónico<span class="req">*</span></label>
+            <input id="email" name="email" type="email" placeholder="Ej. correo@ejemplo.com" required />
+          </div>
+
+          <div class="field">
+            <label for="internal_id">ID opcional / referencia interna (si aplica)</label>
+            <input id="internal_id" name="internal_id" type="text" placeholder="Ej. Código interno o nota (opcional)" />
+            <small>Este campo lo usa JC Green Life NYC solo para referencia interna si es necesario.</small>
+          </div>
+
+          <div class="summary-box">
+            <h4>Resumen rápido de los compromisos (ES / EN)</h4>
+            <ul>
+              <li>Intercambio de comida/servicio por contenido en redes, sin pago económico.</li>
+              <li>3–4 stories por semana, al menos 1 hablado, etiquetando a JC Green Life NYC.</li>
+              <li>Uso de imagen, usuario y contenido generado solo dentro de esta colaboración.</li>
+              <li>No se crea relación laboral ni se garantiza pago en efectivo.</li>
+              <li>Duración inicial de 90 días, renovable o cancelable por cualquiera de las partes.</li>
+            </ul>
+          </div>
+
+          <div class="accept-row">
+            <input type="checkbox" id="accept_terms" />
+            <label for="accept_terms">
+              Declaro que he leído y acepto todos los términos de colaboración descritos en este acuerdo entre
+              JC Green Life NYC e influencer.
+              <br />
+              <b>
+                / I confirm that I have read and accept the collaboration terms in this agreement between JC Green
+                Life NYC and influencer.
+              </b>
+            </label>
+          </div>
+
+          <div id="error-message" class="error-text hidden">
+            Por favor completa todos los campos obligatorios y marca la casilla de aceptación de términos.
+          </div>
+
+          <div class="btn-row">
+            <button type="submit">ENVIAR ACEPTACIÓN</button>
+            <div class="helper-note">
+              Al enviar este formulario autorizas a JC Green Life NYC a registrar tu aceptación de manera digital
+              y generar un PDF interno como respaldo del acuerdo.
+            </div>
+          </div>
+        </form>
+      </section>
     </div>
+
+    <p class="footer-note">
+      Este acuerdo no sustituye asesoría legal independiente. Si tienes dudas, consulta con tu abogado de confianza.
+      ·
+      <a href="https://jcgreenlifenyc.com" target="_blank" rel="noopener">jcgreenlifenyc.com</a>
+    </p>
   </div>
 
-  <!-- EmailJS + jsPDF -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <!-- LIBRERÍAS -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
   <script>
-    // 🔑 INICIALIZAR EMAILJS con tu Public Key
-    (function () {
-      emailjs.init({
-        publicKey: "CL8wV4fPeV2hwUvjPQYRz",
-      });
-    })();
+    // 1) Tabs de idioma ES / EN
+    document.querySelectorAll(".lang-tab").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const lang = btn.dataset.lang;
 
-    document.addEventListener("DOMContentLoaded", function () {
-      const form = document.getElementById("agreement-form");
-      if (!form) return;
+        document
+          .querySelectorAll(".lang-tab")
+          .forEach((b) => b.classList.toggle("active", b === btn));
 
-      form.addEventListener("submit", async function (e) {
-        e.preventDefault();
+        document
+          .querySelectorAll(".lang-block")
+          .forEach((blk) => blk.classList.add("hidden"));
 
-        const termsCheckbox = document.getElementById("accept-terms");
-        if (termsCheckbox && !termsCheckbox.checked) {
-          alert("Por favor acepta los términos de colaboración antes de enviar.");
-          return;
-        }
-
-        const fullnameInput = document.getElementById("fullname");
-        const instagramInput = document.getElementById("instagram");
-        const emailInput = document.getElementById("email");
-
-        const fullname = fullnameInput ? fullnameInput.value.trim() : "";
-        const instagram = instagramInput ? instagramInput.value.trim() : "";
-        const email = emailInput ? emailInput.value.trim() : "";
-
-        const timestamp = new Date().toLocaleString("es-DO", {
-          timeZone: "America/New_York",
-        });
-
-        const pdfDataUri = await generarPDFContrato(
-          fullname,
-          instagram,
-          email,
-          timestamp
-        );
-
-        try {
-          await emailjs.send("service_x97sa0l", "template_sjqizpi", {
-            fullname: fullname,
-            instagram: instagram,
-            email: email,
-            timestamp: timestamp,
-            contrato_pdf: pdfDataUri,
-          });
-
-          alert("¡Gracias! Tu aceptación ha sido registrada.");
-          form.reset();
-        } catch (error) {
-          console.error("Error al enviar el correo con EmailJS:", error);
-          alert(
-            "Tu aceptación se registró, pero hubo un problema enviando el correo. Revisa luego tu EmailJS."
-          );
-        }
+        document
+          .querySelector(".lang-" + lang)
+          .classList.remove("hidden");
       });
     });
 
-    async function generarPDFContrato(fullname, instagram, email, timestamp) {
-      const { jsPDF } = window.jspdf;
-      const doc = new jsPDF();
+    // 2) Supabase
+    const supabaseUrl = "https://qntjjfopldkcdawmkryq.supabase.co";
+    const supabaseAnonKey = "sb_publishable_P80sBJbXJl94LDRL5ga49Q_2H5QnY92";
+    const supabaseClient = supabase.createClient(supabaseUrl, supabaseAnonKey);
 
-      doc.setFontSize(16);
-      doc.text("JC GREEN LIFE NYC", 105, 15, { align: "center" });
-      doc.text("Acuerdo de Colaboración de Influencers", 105, 23, {
-        align: "center",
+    // 3) EmailJS
+    (function () {
+      emailjs.init("CL8wV4fPeV2hwUvjPQYRz");
+    })();
+
+    const form = document.getElementById("agreement-form");
+    const errorBox = document.getElementById("error-message");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      errorBox.classList.add("hidden");
+
+      const fullName = document.getElementById("full_name").value.trim();
+      const instagram = document.getElementById("instagram_handle").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const internalId = document.getElementById("internal_id").value.trim();
+      const accepted = document.getElementById("accept_terms").checked;
+
+      if (!fullName || !instagram || !email || !accepted) {
+        errorBox.classList.remove("hidden");
+        return;
+      }
+
+      const timestamp = new Date().toLocaleString("es-ES", {
+        dateStyle: "short",
+        timeStyle: "short",
       });
 
-      doc.setFontSize(11);
-      let y = 40;
+      // 3.1 Guardar en Supabase
+      try {
+        const { error } = await supabaseClient
+          .from("influencer_agreements")
+          .insert([
+            {
+              full_name: fullName,
+              instagram_handle: instagram,
+              email: email,
+              internal_id: internalId || null,
+              accepted_terms: true,
+            },
+          ]);
 
-      doc.text(`Nombre completo: ${fullname}`, 20, y);
-      y += 8;
-      doc.text(`Usuario de Instagram: ${instagram}`, 20, y);
-      y += 8;
-      doc.text(`Correo electrónico: ${email}`, 20, y);
-      y += 8;
-      doc.text(`Fecha y hora de aceptación: ${timestamp}`, 20, y);
-      y += 12;
+        if (error) {
+          console.error("Error guardando en Supabase:", error.message);
+        }
+      } catch (err) {
+        console.error("Error de Supabase:", err);
+      }
 
-      doc.text("Resumen del acuerdo:", 20, y);
-      y += 8;
-      doc.text("- Intercambio de comidas/servicio por contenido.", 20, y);
-      y += 6;
-      doc.text("- No incluye pago en efectivo.", 20, y);
-      y += 6;
-      doc.text("- Uso autorizado de imagen y contenido generado.", 20, y);
-      y += 6;
-      doc.text("- Duración inicial de 90 días.", 20, y);
-      y += 6;
-      doc.text("- Sin relación laboral / empleo.", 20, y);
-      y += 6;
+      // 3.2 Enviar correo con EmailJS
+      try {
+        await emailjs.send("service_x97sa0l", "template_sjqizpi", {
+          fullname: fullName,
+          instagram: instagram,
+          email: email,
+          timestamp: timestamp,
+          message:
+            "El influencer ha aceptado formalmente el acuerdo de colaboración JC Green Life NYC – Influencer.",
+        });
+      } catch (err) {
+        console.error("Error enviando email:", err);
+      }
 
-      return doc.output("datauristring");
-    }
+      // 3.3 Generar PDF para descargar (respaldo del influencer)
+      try {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF({ unit: "pt", format: "a4" });
+
+        let y = 40;
+        doc.setFontSize(14);
+        doc.text("JC Green Life NYC – Influencer Collaboration Agreement", 40, y);
+        y += 24;
+
+        doc.setFontSize(11);
+        doc.text(`Nombre completo: ${fullName}`, 40, y);
+        y += 16;
+        doc.text(`Instagram: ${instagram}`, 40, y);
+        y += 16;
+        doc.text(`Email: ${email}`, 40, y);
+        y += 16;
+        if (internalId) {
+          doc.text(`ID / referencia interna: ${internalId}`, 40, y);
+          y += 16;
+        }
+        doc.text(`Fecha y hora de aceptación: ${timestamp}`, 40, y);
+        y += 26;
+
+        doc.setFontSize(11);
+        doc.text("Resumen del acuerdo (ES):", 40, y);
+        y += 16;
+        const esText =
+          "• Intercambio de comidas/servicios por contenido en redes, sin pago económico.\n" +
+          "• 3–4 stories por semana, al menos 1 hablado, etiquetando a JC Green Life NYC.\n" +
+          "• Uso de imagen, usuario y contenido generado solo dentro de esta colaboración.\n" +
+          "• No se crea relación laboral ni se garantiza pago en efectivo.\n" +
+          "• Duración inicial de 90 días, renovable o cancelable por cualquiera de las partes.";
+        const esLines = doc.splitTextToSize(esText, 515);
+        doc.text(esLines, 40, y);
+        y += esLines.length * 14 + 18;
+
+        doc.text("Summary of the agreement (EN):", 40, y);
+        y += 16;
+        const enText =
+          "• Exchange of meals/services for social media content, with no monetary payment.\n" +
+          "• 3–4 stories per week, at least 1 spoken, tagging JC Green Life NYC.\n" +
+          "• Use of image, username and generated content only within this collaboration.\n" +
+          "• No employment relationship or cash payment is guaranteed.\n" +
+          "• Initial term of 90 days, renewable or terminable by either party if commitments are not met.";
+        const enLines = doc.splitTextToSize(enText, 515);
+        doc.text(enLines, 40, y);
+
+        doc.save("JC-Green-Life-Influencer-Agreement.pdf");
+      } catch (err) {
+        console.error("Error generando PDF:", err);
+      }
+
+      // 3.4 Limpiar formulario y mostrar mensaje
+      form.reset();
+      alert("¡Gracias! Tu aceptación ha sido registrada.");
+    });
   </script>
 </body>
 </html>
